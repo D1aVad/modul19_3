@@ -1,0 +1,30 @@
+{% extends "fourth_task/main.html" %}
+{% load static %}
+
+{% block pagename %}
+    <h1>Предложения</h1>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {% for game in Games %}
+    <div class="text-buy">
+        {{ game.title }}
+        |
+        {{ game.description }}.
+        Стоимость   
+        {{ game.cost }}
+        <button class="glow-on-hover">Buy</button><br><br>
+    </div>
+    
+    
+        {% endfor %}
+    
+
+    
+    
+    
+{% endblock %}

@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href='{% static "style.css" %}'>
+    <link rel="img" type="img" href='{% static "lada_vesta.png" %}'>
+    <link rel="img" type="img" href='{% static "sportline_sw.png" %}'>
+
+</head>
+<body>
+    {% csrf_token %}
+    <nav>
+        <div class="logo">KHIDIROV</div>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/">Home</a></li>
+            <li><a href="http://127.0.0.1:8000/buy">Buy</a></li>
+            <li><a href="http://127.0.0.1:8000/register">Registration</a></li>
+            <li><a href="http://127.0.0.1:8000/contacts">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        {% block pagename %}
+            <h1> Заголовок страницы</h1>
+        {% endblock %}
+    </header>
+    <nav>
+        {% block menu %}
+           
+        {% endblock %}
+    </nav>
+
+    <main>
+        {% block content %}
+            
+        {% endblock %}
+    </main>
+
+</body>
+</html>

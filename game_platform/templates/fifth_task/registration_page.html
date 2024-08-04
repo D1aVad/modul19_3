@@ -1,0 +1,62 @@
+{% extends "fourth_task/main.html" %}
+
+{% block pagename %}
+    <div class="reg">
+    Регистрация
+    </div>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {% if succses %}
+    <div class="text-red">
+        <p>Вы успешно зарегистрировались!</p>
+    </div>
+    {% endif %}
+    {% if user_no %}
+    <div class="text-red">
+        <p>Пользователь уже существует</p>
+    </div>
+    {% endif %}
+
+    {% if condition %}
+    <div class="text-red">
+        <p>Пароли не совпадают</p>
+    </div>
+        
+    {% endif %}
+
+    {% if age_no %}
+    <div class="text-red">
+        <p>Вы должны быть старше 18</p>
+    </div>
+    {% endif %}
+    
+    
+    
+   
+
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="text-red">
+               
+        <label for="username">Введите имя</label>
+        <input type="text" id = 'username' name="username" maxlength="30" required>
+
+        <label for="password">Введите пароль</label>
+        <input type="text" id = 'password' name="password" required>
+
+        <label for="repeat_password">Введите пароль повторно</label>
+        <input type="text" id="repeat_password" name="repeat_password" required>
+
+        <label for="age">Введите свой возраст</label>
+        <input type="text" id = "age", name = "age" required>
+
+        <button type="submit">Отправить</button>
+    </div>
+    </form>
+{% endblock %}
